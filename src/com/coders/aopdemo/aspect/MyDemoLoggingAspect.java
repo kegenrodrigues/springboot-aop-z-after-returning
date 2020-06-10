@@ -26,11 +26,22 @@ public class MyDemoLoggingAspect {
 		String method = theJoinPoint.getSignature().toShortString();
 		System.out.println("afterReturningAdvice was called after this method finished: "+method);
 		System.out.println("The list is as follows: "+result);
+		
+		
+		convertToUpperCase(result);
+	
 	}
 	
-	
-	
-	
+	private void convertToUpperCase(List<Account> result) {
+		
+		if(result != null) {
+			for(Account tempAccount : result) {
+				tempAccount.setName(tempAccount.getName().toUpperCase());
+			}
+		}
+		
+	}
+
 	@Before("com.coders.aopdemo.aspect.AopExpressions.forDaoPackageNoGettersAndSetters()")
 	public void runBeforeAddAccount(JoinPoint theJointPoint) {
 		
