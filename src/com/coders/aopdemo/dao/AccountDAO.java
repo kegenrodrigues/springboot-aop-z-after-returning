@@ -1,5 +1,8 @@
 package com.coders.aopdemo.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.coders.aopdemo.Account;
@@ -45,4 +48,33 @@ public class AccountDAO {
 		System.out.println(getClass()+" :Doing work");
 	}
 	
+	
+	public List<Account> findAccounts(){
+		
+		List<Account> myAccounts = new ArrayList<>();
+		
+		Account temp1 = new Account("Valentina","Platinum");
+		Account temp2 = new Account("Jack","Silver");
+		Account temp3 = new Account("Juliet","Gold");
+		
+		myAccounts.add(temp1);
+		myAccounts.add(temp2);
+		myAccounts.add(temp3);
+		System.out.println("Just gonna finish executing findAccounts");
+		return myAccounts;
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
